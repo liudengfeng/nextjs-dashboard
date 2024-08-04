@@ -106,26 +106,26 @@ export async function GET() {
     { status: 500 }
   );
 
-  try {
-    await client.sql`BEGIN`;
-    await seedUsers();
-    // await seedCustomers();
-    // await seedInvoices();
-    // await seedRevenue();
-    await client.sql`COMMIT`;
+  // try {
+  //   await client.sql`BEGIN`;
+  //   await seedUsers();
+  //   // await seedCustomers();
+  //   // await seedInvoices();
+  //   // await seedRevenue();
+  //   await client.sql`COMMIT`;
 
-    return Response.json({ message: "Database seeded successfully" });
-  } catch (error: unknown) {
-    await client.sql`ROLLBACK`;
-    console.error("Error seeding database:", error);
+  //   return Response.json({ message: "Database seeded successfully" });
+  // } catch (error: unknown) {
+  //   await client.sql`ROLLBACK`;
+  //   console.error("Error seeding database:", error);
 
-    let errorMessage: string;
-    if (error instanceof Error) {
-      errorMessage = error.message;
-    } else {
-      errorMessage = String(error);
-    }
+  //   let errorMessage: string;
+  //   if (error instanceof Error) {
+  //     errorMessage = error.message;
+  //   } else {
+  //     errorMessage = String(error);
+  //   }
 
-    return Response.json({ error: errorMessage }, { status: 500 });
-  }
+  //   return Response.json({ error: errorMessage }, { status: 500 });
+  // }
 }
