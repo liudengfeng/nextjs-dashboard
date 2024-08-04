@@ -101,12 +101,10 @@ import { invoices, customers, revenue, users } from "../lib/placeholder-data";
 //   return insertedRevenue;
 // }
 export async function GET() {
-  if (!client) {
-    return Response.json(
-      { error: "Database client is not available" },
-      { status: 500 }
-    );
-  }
+  return Response.json(
+    { error: "Database client is not available" },
+    { status: 500 }
+  );
 
   try {
     await client.sql`BEGIN`;
