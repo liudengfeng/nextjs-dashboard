@@ -1,5 +1,6 @@
 "use client";
 
+import { authenticate } from "@/app/lib/actions";
 import { lusitana } from "@/app/ui/fonts";
 import {
   AtSymbolIcon,
@@ -9,13 +10,13 @@ import {
 import { ArrowRightIcon } from "@heroicons/react/20/solid";
 import { Button } from "./button";
 import { useActionState } from "react";
-import { authenticate } from "@/app/lib/actions";
 
 export default function LoginForm() {
   const [errorMessage, formAction, isPending] = useActionState(
     authenticate,
     undefined
   );
+
   return (
     <form action={formAction} className="space-y-3">
       <div className="flex-1 rounded-lg bg-gray-50 px-6 pb-4 pt-8">
