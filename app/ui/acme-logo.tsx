@@ -1,4 +1,4 @@
-import { TrophyIcon  } from '@heroicons/react/24/outline';
+import { RocketLaunchIcon } from '@heroicons/react/24/outline';
 import { lusitana } from '@/app/ui/fonts';
 // import Image from 'next/image';
 
@@ -7,7 +7,7 @@ export default function AcmeLogo() {
     <div
       className={`${lusitana.className} flex flex-row items-center leading-none text-white`}
     >
-      <TrophyIcon  className="h-12 w-12 mr-4" />
+      <RocketLaunchIcon className="h-12 w-12 mr-4" />
       {/* <Image
         src="/logo.png"
         width={512}
